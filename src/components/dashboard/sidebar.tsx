@@ -10,7 +10,6 @@ import {
   ChevronRight,
   Users,
   Mail,
-  Eye,
   LayoutDashboard,
   Forklift,
   Tags,
@@ -39,7 +38,7 @@ import {
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
-import { AiFillProduct, AiOutlineLoading3Quarters } from "react-icons/ai";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { BsGear } from "react-icons/bs";
 import { Session } from "@/interfaces/session";
 import { signOut } from "next-auth/react";
@@ -114,7 +113,7 @@ export function AppSidebar() {
               </div>
             </SidebarGroupLabel>
           </Link>
-          <SidebarSeparator className="mt-5 -mb-5 opacity-0" />
+          <SidebarSeparator className="mt-5 bg-blue-400/50 dark:bg-neutral-800" />
           <SidebarTrigger className="absolute top-1 right-1 flex items-center gap-2">
             <Menu /> Fechar Sidebar
           </SidebarTrigger>
