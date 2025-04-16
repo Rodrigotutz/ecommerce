@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 export default function ProfilePage() {
   return (
-    <div className=" bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-neutral-800 dark:to-neutral-950 dark:bg-neutral-800">
+    <div className="bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-neutral-800 dark:to-neutral-950 dark:bg-neutral-800">
       <div className="flex flex-col lg:flex-row h-full">
         <div className="w-full lg:w-2/5 bg-white dark:bg-neutral-800 shadow-lg p-6">
           <div className="flex flex-col items-center">
@@ -76,10 +76,10 @@ export default function ProfilePage() {
               </div>
             </div>
 
-            <Button className="cursor-pointer mt-6 w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 dark:bg-neutral-700 dark:hover:bg-neutral-600/80 transition duration-200 flex items-center justify-center">
+            <Button className="cursor-pointer mt-6 w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 dark:bg-neutral-900 dark:hover:bg-neutral-900/60 transition duration-200 flex items-center justify-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5 mr-2"
+                className="h-5 w-5"
                 viewBox="0 0 20 20"
                 fill="currentColor"
               >
@@ -272,7 +272,7 @@ export default function ProfilePage() {
               ].map((activity, index) => (
                 <div
                   key={index}
-                  className="px-6 py-4 flex items-start hover:bg-gray-50 transition duration-150"
+                  className="px-6 py-4 flex items-start hover:bg-gray-50 dark:hover:bg-neutral-800 transition duration-150"
                 >
                   <div className="flex-shrink-0 h-10 w-10 rounded-full bg-indigo-100 flex items-center justify-center">
                     {activity.icon}
