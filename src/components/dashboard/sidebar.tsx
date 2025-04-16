@@ -92,8 +92,8 @@ export function AppSidebar() {
   return (
     <Sidebar collapsible={"icon"} variant={"sidebar"}>
       <div className="flex flex-col h-full">
-        <Link href={"/dashboard/me"}>
-          <SidebarHeader className="shrink-0 bg-blue-500 text-white dark:bg-neutral-900">
+        <SidebarHeader className="shrink-0 bg-blue-500 text-white dark:bg-neutral-900">
+          <Link href={"/dashboard/me"} className="hover:">
             <SidebarGroupLabel className="flex gap-2 mt-2">
               <Avatar>
                 <AvatarImage src="user.png" />
@@ -113,19 +113,22 @@ export function AppSidebar() {
                 </h3>
               </div>
             </SidebarGroupLabel>
-            <SidebarSeparator className="mt-5 -mb-5 opacity-0" />
-            <SidebarTrigger className="absolute top-1 right-1 flex items-center gap-2">
-              <Menu /> Fechar Sidebar
-            </SidebarTrigger>
-          </SidebarHeader>
-        </Link>
+          </Link>
+          <SidebarSeparator className="mt-5 -mb-5 opacity-0" />
+          <SidebarTrigger className="absolute top-1 right-1 flex items-center gap-2">
+            <Menu /> Fechar Sidebar
+          </SidebarTrigger>
+        </SidebarHeader>
         <SidebarContent className="text-white bg-blue-500 dark:bg-neutral-900 overflow-y-auto flex-grow">
           <SidebarGroup>
             <SidebarGroupContent className="mt-5">
               <SidebarMenu>
                 {items.map((item) => (
                   <SidebarMenuItem key={item.title} className="mb-1">
-                    <SidebarMenuButton asChild className="hover:bg-blue-400/30 hover:text-white dark:hover:bg-neutral-800">
+                    <SidebarMenuButton
+                      asChild
+                      className="hover:bg-blue-400/30 hover:text-white dark:hover:bg-neutral-800"
+                    >
                       <Link href={`/dashboard${item.url}`}>
                         <item.icon size={item.size} />
                         <span className="text-[16px]">{item.title}</span>
@@ -143,7 +146,7 @@ export function AppSidebar() {
             <Collapsible defaultOpen className="group/collapsible">
               <SidebarMenuItem>
                 <CollapsibleTrigger asChild>
-                  <SidebarMenuButton>
+                  <SidebarMenuButton className=" hover:text-white cursor-pointer hover:bg-blue-400/40 hover:dark:bg-neutral-800">
                     <Settings2 /> Definições
                     <ChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
                   </SidebarMenuButton>
@@ -152,28 +155,21 @@ export function AppSidebar() {
                   <SidebarMenuSub>
                     <SidebarMenuSubItem>
                       <Link href={"/dashboard/definicoes"}>
-                        <SidebarMenuButton className="cursor-pointer">
+                        <SidebarMenuButton className=" hover:text-white cursor-pointer hover:bg-blue-400/40 hover:dark:bg-neutral-800">
                           <BsGear size={20} /> Geral
                         </SidebarMenuButton>
                       </Link>
                     </SidebarMenuSubItem>
-                    {/**  <SidebarMenuSubItem>
-                        <Link href={"/dashboard/definicoes/autenticacao"}>
-                          <SidebarMenuButton className="cursor-pointer">
-                            <LockKeyhole size={20} /> Autenticação
-                          </SidebarMenuButton>
-                        </Link>
-                      </SidebarMenuSubItem> */}
                     <SidebarMenuSubItem>
                       <Link href={"/dashboard/definicoes/email"}>
-                        <SidebarMenuButton className="cursor-pointer">
+                        <SidebarMenuButton className=" hover:text-white cursor-pointer hover:bg-blue-400/40 hover:dark:bg-neutral-800">
                           <Mail size={20} /> Email
                         </SidebarMenuButton>
                       </Link>
                     </SidebarMenuSubItem>
                     <SidebarMenuSubItem>
                       <Link href={"/dashboard/definicoes/usuarios"}>
-                        <SidebarMenuButton className="cursor-pointer">
+                        <SidebarMenuButton className=" hover:text-white cursor-pointer hover:bg-blue-400/40 hover:dark:bg-neutral-800">
                           <Users size={20} /> Usuarios
                         </SidebarMenuButton>
                       </Link>
@@ -187,7 +183,7 @@ export function AppSidebar() {
           <SidebarMenu>
             <SidebarMenuItem>
               <SidebarMenuButton
-                className="cursor-pointer"
+                className=" hover:text-white cursor-pointer hover:bg-blue-400/40 hover:dark:bg-neutral-800"
                 onClick={handleLogout}
               >
                 <LogOut /> Sair
