@@ -140,7 +140,7 @@ export function LoginDialog() {
             </div>
           </div>
           <DropdownMenuItem asChild>
-            <Link href="/dashboard" className="cursor-pointer">
+            <Link href="/dashboard/me" className="cursor-pointer">
               <User className="mr-2 h-4 w-4" />
               Meu Perfil
             </Link>
