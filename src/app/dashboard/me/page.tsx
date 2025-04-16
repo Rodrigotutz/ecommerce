@@ -1,18 +1,19 @@
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Button } from "@/components/ui/button";
 
 export default function ProfilePage() {
   return (
-    <div className=" bg-gradient-to-br from-blue-50 to-indigo-100">
+    <div className=" bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-neutral-800 dark:to-neutral-950 dark:bg-neutral-800">
       <div className="flex flex-col lg:flex-row h-full">
-        <div className="w-full lg:w-2/5 bg-white shadow-lg p-6">
+        <div className="w-full lg:w-2/5 bg-white dark:bg-neutral-800 shadow-lg p-6">
           <div className="flex flex-col items-center">
             <div className="relative -mt-0">
-              <Avatar className="h-32 w-32 border-4 border-white shadow-md">
-                <AvatarFallback className="text-4xl font-semibold bg-indigo-100 text-blue-600">
+              <Avatar className="h-32 w-32 border-4 border-white dark:border-neutral-700 shadow-md">
+                <AvatarFallback className="text-4xl font-semibold bg-indigo-100 dark:bg-neutral-600 dark:text-white text-blue-600">
                   RT
                 </AvatarFallback>
               </Avatar>
-              <button className="absolute bottom-0 right-0 bg-blue-600 text-white p-2 rounded-full hover:bg-indigo-700 transition duration-200">
+              <button className="absolute bottom-0 right-0 bg-blue-600 dark:bg-white dark:text-neutral-900 text-white p-2 rounded-full hover:bg-indigo-700 transition duration-200">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-4 w-4"
@@ -25,8 +26,10 @@ export default function ProfilePage() {
             </div>
 
             <div className="mt-6 text-center">
-              <h2 className="text-2xl font-bold text-gray-800">Rodrigo Tutz</h2>
-              <div className="mt-4 flex items-center justify-center text-gray-600">
+              <h2 className="text-2xl font-bold text-neutral-800 dark:text-white">
+                Rodrigo Tutz
+              </h2>
+              <div className="mt-4 flex items-center justify-center text-gray-600 dark:text-white/70">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5 mr-2"
@@ -44,7 +47,7 @@ export default function ProfilePage() {
             </div>
 
             <div className="mt-6 w-full space-y-3">
-              <div className="flex items-center text-gray-600">
+              <div className="flex items-center text-gray-600 dark:text-white/70">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5 mr-2"
@@ -56,7 +59,7 @@ export default function ProfilePage() {
                 </svg>
                 rodrigo@exemplo.com
               </div>
-              <div className="flex items-center text-gray-600">
+              <div className="flex items-center text-gray-600 dark:text-white/70">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5 mr-2"
@@ -73,7 +76,7 @@ export default function ProfilePage() {
               </div>
             </div>
 
-            <button className="mt-6 w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-200 flex items-center justify-center">
+            <Button className="cursor-pointer mt-6 w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 dark:bg-neutral-700 dark:hover:bg-neutral-600/80 transition duration-200 flex items-center justify-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5 mr-2"
@@ -83,38 +86,50 @@ export default function ProfilePage() {
                 <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" />
               </svg>
               Editar Perfil
-            </button>
+            </Button>
 
             <div className="mt-8 w-full grid grid-cols-3 gap-2 text-center">
-              <div className="p-3 bg-gray-50 rounded-lg">
-                <p className="text-xl font-bold text-blue-600">42</p>
-                <p className="text-xs text-gray-600">Produtos</p>
+              <div className="p-3 bg-gray-50 dark:bg-neutral-900 rounded-lg">
+                <p className="text-xl font-bold text-blue-600 dark:text-white">
+                  42
+                </p>
+                <p className="text-xs text-gray-600 dark:text-white/60">
+                  Produtos
+                </p>
               </div>
-              <div className="p-3 bg-gray-50 rounded-lg">
-                <p className="text-xl font-bold text-blue-600">3.5k</p>
-                <p className="text-xs text-gray-600">Vendas</p>
+              <div className="p-3 bg-gray-50 dark:bg-neutral-900 rounded-lg">
+                <p className="text-xl font-bold text-blue-600 dark:text-white">
+                  3.5k
+                </p>
+                <p className="text-xs text-gray-600 dark:text-white/60">
+                  Vendas
+                </p>
               </div>
-              <div className="p-3 bg-gray-50 rounded-lg">
-                <p className="text-xl font-bold text-blue-600">128</p>
-                <p className="text-xs text-gray-600">Clientes</p>
+              <div className="p-3 bg-gray-50 dark:bg-neutral-900 rounded-lg">
+                <p className="text-xl font-bold text-blue-600 dark:text-white">
+                  128
+                </p>
+                <p className="text-xs text-gray-600 dark:text-white/60">
+                  Clientes
+                </p>
               </div>
             </div>
           </div>
         </div>
 
         <div className="w-full p-6 lg:h-screen lg:overflow-y-auto">
-          <div className="bg-white rounded-lg shadow p-6 mb-6">
-            <h1 className="text-2xl font-bold text-gray-800">
+          <div className="bg-white dark:bg-neutral-800 rounded-lg shadow p-6 mb-6">
+            <h1 className="text-2xl font-bold text-gray-800 dark:text-white">
               Dados do Usuário
             </h1>
-            <p className="text-gray-600">
+            <p className="text-gray-600 dark:text-white/70">
               Bem-vindo de volta, Rodrigo! Aqui está o que está acontecendo
               hoje.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
-            <div className="bg-white rounded-lg shadow p-6 hover:shadow-md transition duration-200">
+            <div className="bg-white dark:bg-neutral-900 rounded-lg shadow p-6 hover:shadow-md transition duration-200">
               <div className="flex items-center">
                 <div className="p-3 rounded-full bg-green-100 text-green-600">
                   <svg
@@ -139,7 +154,7 @@ export default function ProfilePage() {
               </div>
             </div>
 
-            <div className="bg-white rounded-lg shadow p-6 hover:shadow-md transition duration-200">
+            <div className="bg-white dark:bg-neutral-900 rounded-lg shadow p-6 hover:shadow-md transition duration-200">
               <div className="flex items-center">
                 <div className="p-3 rounded-full bg-blue-100 text-blue-600">
                   <svg
@@ -164,7 +179,7 @@ export default function ProfilePage() {
               </div>
             </div>
 
-            <div className="bg-white rounded-lg shadow p-6 hover:shadow-md transition duration-200">
+            <div className="bg-white dark:bg-neutral-900 rounded-lg shadow p-6 hover:shadow-md transition duration-200">
               <div className="flex items-center">
                 <div className="p-3 rounded-full bg-purple-100 text-purple-600">
                   <svg
@@ -196,13 +211,13 @@ export default function ProfilePage() {
             </div>
           </div>
 
-          <div className="bg-white rounded-lg shadow overflow-hidden">
-            <div className="border-b border-gray-200 px-6 py-4">
-              <h3 className="text-lg font-semibold text-gray-800">
+          <div className="bg-white dark:bg-neutral-900 rounded-lg shadow overflow-hidden">
+            <div className="border-b border-gray-200 dark:border-neutral-700 px-6 py-4">
+              <h3 className="text-lg font-semibold text-gray-800 dark:text-white">
                 Atividade Recente
               </h3>
             </div>
-            <div className="divide-y divide-gray-200">
+            <div className="divide-y divide-gray-200 dark:divide-neutral-700">
               {[
                 {
                   icon: (
@@ -234,8 +249,7 @@ export default function ProfilePage() {
                     </svg>
                   ),
                   title: "Perfil atualizado",
-                  description:
-                    "Nome de Perfil atualizado - 1 dia atrás",
+                  description: "Nome de Perfil atualizado - 1 dia atrás",
                 },
                 {
                   icon: (
@@ -253,8 +267,7 @@ export default function ProfilePage() {
                     </svg>
                   ),
                   title: "Novo Usuario Cadastrado",
-                  description:
-                    "Marcius Mellen - 3 dias",
+                  description: "Marcius Mellen - 3 dias",
                 },
               ].map((activity, index) => (
                 <div
@@ -265,7 +278,7 @@ export default function ProfilePage() {
                     {activity.icon}
                   </div>
                   <div className="ml-4">
-                    <p className="text-sm font-medium text-gray-900">
+                    <p className="text-sm font-medium text-gray-900 dark:text-white">
                       {activity.title}
                     </p>
                     <p className="text-sm text-gray-500">
@@ -276,8 +289,8 @@ export default function ProfilePage() {
               ))}
             </div>
 
-            <div className="px-6 py-4 border-t border-gray-200 text-center">
-              <button className="text-blue-600 hover:text-blue-800 text-sm font-medium">
+            <div className="px-6 py-4 border-t border-gray-200 dark:border-neutral-700 text-center">
+              <button className="text-blue-600 hover:text-blue-800 dark:text-white text-sm font-medium">
                 Ver todas as atividades
               </button>
             </div>
