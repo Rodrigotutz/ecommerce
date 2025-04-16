@@ -4,13 +4,13 @@ import React from "react";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <>
+    <div>
       <SidebarProvider>
         <header>
           <AppSidebar />
         </header>
-        <main>{children}</main>
+        <main className="w-full h-screen">{children}</main>
       </SidebarProvider>
-    </>
+    </div>
   );
 }

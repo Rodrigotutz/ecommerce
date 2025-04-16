@@ -92,38 +92,40 @@ export function AppSidebar() {
   return (
     <Sidebar collapsible={"icon"} variant={"sidebar"}>
       <div className="flex flex-col h-full">
-        <SidebarHeader className="shrink-0 dark:bg-neutral-900">
-          <SidebarGroupLabel className="flex gap-2 mt-2">
-            <Avatar>
-              <AvatarImage src="user.png" />
-              <AvatarFallback className="bg-gray-700 text-white text-lg font-bold">
-                {session ? (
-                  getInitials(session?.user?.name)
-                ) : (
-                  <AiOutlineLoading3Quarters className="animate-spin w-5 h-5" />
-                )}
-              </AvatarFallback>
-            </Avatar>
-            <div>
-              <h3 className="text-lg">
-                {session
-                  ? getFirstTwoNames(session?.user?.name)
-                  : "Carregando..."}
-              </h3>
-            </div>
-          </SidebarGroupLabel>
-          <SidebarSeparator className="mt-5 -mb-5 opacity-0" />
-          <SidebarTrigger className="absolute top-1 right-1 flex items-center gap-2">
-            <Menu /> Fechar Sidebar
-          </SidebarTrigger>
-        </SidebarHeader>
-        <SidebarContent className="overflow-y-auto flex-grow">
+        <Link href={"/dashboard/me"}>
+          <SidebarHeader className="shrink-0 bg-blue-500 text-white dark:bg-neutral-900">
+            <SidebarGroupLabel className="flex gap-2 mt-2">
+              <Avatar>
+                <AvatarImage src="user.png" />
+                <AvatarFallback className="dark:bg-gray-700 text-blue-500 dark:text-white text-lg font-bold">
+                  {session ? (
+                    getInitials(session?.user?.name)
+                  ) : (
+                    <AiOutlineLoading3Quarters className="animate-spin w-5 h-5" />
+                  )}
+                </AvatarFallback>
+              </Avatar>
+              <div className="text-white">
+                <h3 className="text-lg">
+                  {session
+                    ? getFirstTwoNames(session?.user?.name)
+                    : "Carregando..."}
+                </h3>
+              </div>
+            </SidebarGroupLabel>
+            <SidebarSeparator className="mt-5 -mb-5 opacity-0" />
+            <SidebarTrigger className="absolute top-1 right-1 flex items-center gap-2">
+              <Menu /> Fechar Sidebar
+            </SidebarTrigger>
+          </SidebarHeader>
+        </Link>
+        <SidebarContent className="text-white bg-blue-500 dark:bg-neutral-900 overflow-y-auto flex-grow">
           <SidebarGroup>
             <SidebarGroupContent className="mt-5">
               <SidebarMenu>
                 {items.map((item) => (
                   <SidebarMenuItem key={item.title} className="mb-1">
-                    <SidebarMenuButton asChild>
+                    <SidebarMenuButton asChild className="hover:bg-blue-400/30 hover:text-white dark:hover:bg-neutral-800">
                       <Link href={`/dashboard${item.url}`}>
                         <item.icon size={item.size} />
                         <span className="text-[16px]">{item.title}</span>
@@ -136,7 +138,7 @@ export function AppSidebar() {
           </SidebarGroup>
         </SidebarContent>
 
-        <SidebarFooter className="shrink-0">
+        <SidebarFooter className="text-white bg-blue-500 dark:bg-neutral-900  shrink-0">
           <SidebarMenu>
             <Collapsible defaultOpen className="group/collapsible">
               <SidebarMenuItem>

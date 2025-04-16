@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Page() {
   return (
-    <div className="w-full h-screen flex items-center justify-center flex-col gap-5 bg-white dark:bg-gray-900">
+    <div className="w-full h-screen flex items-center justify-center flex-col gap-5 bg-white dark:bg-neutral-900">
       <div className="w-44 md:w-[500px] text-gray-800 dark:text-gray-100">
         <Image
           src={NotFoundSvg}
