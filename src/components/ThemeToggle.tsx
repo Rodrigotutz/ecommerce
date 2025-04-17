@@ -12,7 +12,6 @@ export function ThemeToggle() {
     null
   );
 
-  // Carrega o tema inicial
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme") as "light" | "dark" | null;
     const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
@@ -30,10 +29,8 @@ export function ThemeToggle() {
     setPendingTheme(newTheme);
     setIsLoading(true);
 
-    // Aplica o tema apenas no localStorage (não no DOM ainda)
     localStorage.setItem("theme", newTheme);
 
-    // Recarrega após um breve delay para mostrar o diálogo
     setTimeout(() => {
       window.location.reload();
     }, 500);
