@@ -225,7 +225,7 @@ export function LoginDialog() {
           <Button
             type="submit"
             disabled={loading}
-            className="mt-2 bg-primary hover:bg-primary/90 text-white dark:bg-primary-600 dark:hover:bg-primary-600/90"
+            className="mt-2 bg-primary hover:bg-primary/90 text-white dark:bg-white dark:text-neutral-900 dark:hover:bg-white/90"
           >
             {loading ? (
               <div className="flex items-center justify-center">
